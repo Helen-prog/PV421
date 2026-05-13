@@ -39,9 +39,35 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ((AnimationDrawable)image.getDrawable()).start();
-               Animation out = AnimationUtils.loadAnimation(getBaseContext(), R.anim.anim_alpha);
-               image.startAnimation(out);
+//               Animation out = AnimationUtils.loadAnimation(SecondActivity.this, R.anim.anim_alpha);
+//               image.startAnimation(out);
+                Animation translate = AnimationUtils.loadAnimation(SecondActivity.this, R.anim.anim_translate);
+                image.startAnimation((translate));
             }
         });
+
+        ImageView myImageView = findViewById(R.id.boyImage0);
+        Button buttonRotateCenter = findViewById(R.id.rotateCenter);
+        Button buttonRotateCorner = findViewById(R.id.rotateCorner);
+
+        Animation animationRotateCenter = AnimationUtils.loadAnimation(SecondActivity.this, R.anim.rotate_center);
+        Animation animationRotateCorner = AnimationUtils.loadAnimation(SecondActivity.this, R.anim.rotate_corner);
+
+        buttonRotateCenter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myImageView.startAnimation(animationRotateCenter);
+            }
+        });
+
+        buttonRotateCorner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myImageView.startAnimation(animationRotateCorner);
+            }
+        });
+
+        Animation scale = AnimationUtils.loadAnimation(this, R.anim.shrink);
+        secondBtn.startAnimation(scale);
     }
 }

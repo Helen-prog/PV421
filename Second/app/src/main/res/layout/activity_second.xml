@@ -11,7 +11,7 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="300dp"
         android:background="@drawable/btn3"
         android:paddingHorizontal="30dp"
         android:text="Вернуться назад"
@@ -25,9 +25,40 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/my_animation" />
+
+    <Button
+        android:id="@+id/rotateCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Вращение относительно центра"
+        android:layout_marginTop="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <ImageView
+        android:id="@+id/boyImage0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rotateCenter"
+        app:srcCompat="@drawable/boy_0" />
+
+    <Button
+        android:id="@+id/rotateCorner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Вращение относительно угла"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boyImage0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
